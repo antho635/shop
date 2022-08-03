@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="box-details">
+
+    <h2 class="text-center">{{ product.name }}</h2>
+
+    <div>
+        {% load static %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <p>{{ product.name }}</p>
+        <p>{{ product.description }}</p>
+        <p>Prix :
+            <strong>{{ product.price }} €</strong>
+        </p>
+        <p>Quantité en stock :
+            <strong>{{ product.stock }}</strong>
+        </p>
+    </div>
+
+    <!-- bouton + lien add-to-cart -->
+    {% if user.is_authenticated %}
+            <a class="btn btn-success" href="#">Ajouter panier</a> <!-- { url 'add-to-cart' product.slug } -->
+    {% else %}
+        <p class="msg-login-for-add-cart">Veuillez vous connecter pour ajouter cette article dans votre panier</p>
+    {% endif %}
+
+</div>
+{% endblock %}
