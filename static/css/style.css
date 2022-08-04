@@ -101,3 +101,7 @@ footer {
  width: 90%;
  margin: auto;
 }
+
+.logo > a:nth-child(1) > img:nth-child(1) {
+ width: 25%;
+}
