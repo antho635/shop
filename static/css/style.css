@@ -151,4 +151,11 @@ footer {
        margin: auto;
     }
 
+    div.product-box > img {
+    width: 70%;
+    }
+    .product-box {
+    width: 100%;
+    }
 }
+
