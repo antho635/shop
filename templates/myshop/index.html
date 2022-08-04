@@ -4,8 +4,8 @@
 {% for product in products %}
 
     <div class="product-box">
-        {% load static %}
-        <img src="{{ url 'product.image.url }}" alt="Hi!">
+
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
         <div class="caption">
             <h4>{{ product.name }}</h4>
             <p>
