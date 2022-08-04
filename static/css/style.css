@@ -127,15 +127,28 @@ footer {
       width: 80%;
     }
 
-    div.product-box:nth-child(1) > div:nth-child(2) {
+    div.product-box > div {
       display: flex;
       justify-content: center;
       margin: auto;
       flex-direction: column;
     }
 
-    div.product-box:nth-child(1) > img:nth-child(1) {
+    div.product-box > img {
       display: flex;
       justify-content: center;
+      margin: auto;
     }
+
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
+      width: 100%;
+    }
+
+    a.nav-link {
+       margin: auto;
+    }
+
 }
