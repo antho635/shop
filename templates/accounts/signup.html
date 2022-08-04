@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- formulaire de connection -->
+<div class="box-signup">
+    <h1>Connexion</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Pseudo</label>
+            <input type="text" class="form-control" id="username" name="username">
+            <label for="password">Mot de passe</label>
+            <input type="password" class="form-control" id="password" name="password">
+
+            <button type="submit" class="btn btn-primary">Connexion</button>
+        </div>
+</div>
+
+{% endblock %}
