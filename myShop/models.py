@@ -49,6 +49,7 @@ Order model
 - product: product of the order (ForeignKey)
 - quantity: quantity of the order (IntegerField)
 - ordered: ordered of the order (BooleanField)
+- date_ordered: date of the order (DateTimeField)
 '''
 
 '''
