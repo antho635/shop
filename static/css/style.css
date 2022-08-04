@@ -105,3 +105,11 @@ footer {
 .logo > a:nth-child(1) > img:nth-child(1) {
  width: 25%;
 }
+
+@media screen and (max-width: 900px) {
+    .content-header {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+}
