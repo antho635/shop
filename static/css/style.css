@@ -106,10 +106,13 @@ footer {
  width: 25%;
 }
 
-@media screen and (max-width: 900px) {
-    .content-header {
+@media screen and (max-width: 900px)
+{
+    .content-header
+    {
         display: flex;
         align-items: center;
         margin: auto;
+        flex-direction: column !important;
     }
 }
