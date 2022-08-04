@@ -22,6 +22,7 @@ def signup(request):
 
 def login_view(request):
     if request.method == "POST":
+        # connect l'utilisateur
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
