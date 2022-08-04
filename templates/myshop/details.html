@@ -20,7 +20,9 @@
 
     <!-- bouton + lien add-to-cart -->
     {% if user.is_authenticated %}
-            <a class="btn btn-success" href="#">Ajouter panier</a> <!-- { url 'add-to-cart' product.slug } -->
+            <p>
+                <a class="btn btn-success" href="{% url 'add-to-cart' product.slug %}">Ajouter panier</a>
+            </p>
     {% else %}
         <p class="msg-login-for-add-cart">Veuillez vous connecter pour ajouter cette article dans votre panier</p>
     {% endif %}

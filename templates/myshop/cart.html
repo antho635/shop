@@ -1,4 +1,44 @@
 {%  extends 'base.html' %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Panier</h1>
+
+            {% if user.cart %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td>{{ order.product.name }}</td>
+                                <td>{{ order.quantity }}</td>
+                                <td>{{ order.product.price }}</td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            <!-- bouton supprimer panier -->
+            <p>
+                <a class="btn btn-danger" href="{% url 'delete-cart' %}">Supprimer panier</a>
+            </p>
+            <!-- bouton payer -->
+            <p>
+                <a class="btn btn-success" href="#">Payer</a>
+            </p>
+            {% else %}
+                <p>No products in cart.</p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
 {% endblock %}

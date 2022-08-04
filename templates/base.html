@@ -37,11 +37,11 @@
 
             {% if user.cart %}
                 <p>
-                    <a class="nav-link" href="#"> <!-- { url 'cart' } -->
-                            {% load static %}
-                            <img src="#" alt="cart" style="width:30px"> <!-- { static 'panier.png' } -->
-                        ({{ user.cart.orders.count }})</a>
-                    </p>
+                    <a class="nav-link" href="{% url 'cart' %}"> <!-- { url 'cart' } -->
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        ( {{ user.cart.orders.count }} )
+                    </a>
+                </p>
             {% endif %}
         </nav>
     </div>

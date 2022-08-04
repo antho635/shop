@@ -1,5 +1,8 @@
 from django.db import models
 from django.urls import reverse
+from djangoProject import settings
+from djangoProject.settings import AUTH_USER_MODEL
+
 '''
 Category model
 - title: name of the category (CharField)
@@ -50,7 +53,25 @@ Order model
 - quantity: quantity of the order (IntegerField)
 - ordered: ordered of the order (BooleanField)
 - date_ordered: date of the order (DateTimeField)
+    class Meta:
+        ordering = ['-date_ordered']    
 '''
+
+
+class Order(models.Model):
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    ordered = models.BooleanField(default=False)
+    date_ordered = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.product.name},(Utilisateur : {self.user.username}, Quantité : {self.quantity})"
+
+    class Meta:
+        ordering = ['-date_ordered']
+
+
 
 '''
 Cart model
@@ -60,3 +81,17 @@ Cart model
 - ordered_date: ordered_date of the cart (DateTimeField)
 - quantity: quantity of the cart (IntegerField)
 '''
+
+
+class Cart(models.Model):
+    user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    orders = models.ManyToManyField(Order, blank=True)
+    ordered = models.BooleanField(default=False)
+    ordered_date = models.DateTimeField(blank=True, null=True)
+    quantity = models.IntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.user.username}'s cart", self.quantity
+
+    class Meta:
+        ordering = ['-ordered_date']

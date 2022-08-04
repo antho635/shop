@@ -1,7 +1,8 @@
+
 from django.contrib import admin
 from django.urls import path
 from accounts.views import signup, login_view, logout_view
-from myShop.views import index, details
+from myShop.views import index, details, add_to_cart, cart, delete_cart
 from djangoProject import settings
 from django.conf.urls.static import static
 
@@ -13,4 +14,7 @@ urlpatterns = [
     path('accounts/signup/', signup, name='signup'),
     path('accounts/login/', login_view, name='login'),
     path('accounts/logout/', logout_view, name='logout'),
+    path('cart/', cart, name='cart'),
+    path('product/<str:slug>/add_to_cart/', add_to_cart, name='add-to-cart'),
+    path('delete-cart/', delete_cart, name='delete-cart'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

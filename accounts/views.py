@@ -34,7 +34,7 @@ def login_view(request):
     return render(request, 'accounts/login.html', {'error': 'Invalid username or password'})
 
 
-
 def logout_view(request):
     logout(request)
     return redirect('index')
+
