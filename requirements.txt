@@ -10,3 +10,5 @@ pystache==0.6.0
 sqlparse==0.4.2
 static==1.1.1
 whitenoise==6.2.0
+django-taggit==3.0.0
+gunicorn==20.1.0
