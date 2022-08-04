@@ -36,9 +36,12 @@ def cart(request):
 
 
 def delete_cart(request):
-    cart, _ = Cart.objects.get_or_create(Cart, user=request.user)
-    cart.orders.all().delete()
-    return redirect(reverse("cart"))
+    if cart := request.user.cart:
+        cart.orders.all().delete()
+        cart.delete()
+
+    return redirect(reverse("index"))
+
 
 
 

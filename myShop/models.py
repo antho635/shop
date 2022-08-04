@@ -1,6 +1,8 @@
+from django.contrib import admin
 from django.db import models
 from django.urls import reverse
-from djangoProject import settings
+from django.utils.html import format_html
+
 from djangoProject.settings import AUTH_USER_MODEL
 
 '''
@@ -12,10 +14,14 @@ Category model
 
 class Category(models.Model):
     title = models.CharField(max_length=120)
-    description = models.TextField(max_length=2500)
+    date_added = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name_plural = "Categories"
+        ordering = ['-date_added']
 
 
 '''
@@ -38,12 +44,16 @@ class Product(models.Model):
     description = models.TextField(max_length=2500)
     image = models.ImageField(upload_to='products', blank=True, null=True)
     stock = models.IntegerField(default=0)
+    date_added = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse("product", kwargs={"slug": self.slug})
+
+    class Meta:
+        ordering = ["-date_added"]
 
 
 '''
@@ -63,14 +73,13 @@ class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     ordered = models.BooleanField(default=False)
-    date_ordered = models.DateTimeField(auto_now_add=True)
+    ordered_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.product.name},(Utilisateur : {self.user.username}, Quantité : {self.quantity})"
+        return f"{self.product.name} ({self.user.username}) ({self.quantity}) ({self.ordered_date})"
 
     class Meta:
-        ordering = ['-date_ordered']
-
+        ordering = ['-ordered_date']
 
 
 '''
@@ -86,12 +95,29 @@ Cart model
 class Cart(models.Model):
     user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     orders = models.ManyToManyField(Order, blank=True)
-    ordered = models.BooleanField(default=False)
-    ordered_date = models.DateTimeField(blank=True, null=True)
-    quantity = models.IntegerField(default=1)
 
     def __str__(self):
-        return f"{self.user.username}'s cart", self.quantity
+        return f"{self.user.username} + 's cart + ' ' + self.quantity"
 
     class Meta:
-        ordering = ['-ordered_date']
+        ordering = ['-user']
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['title', 'date_added']
+    list_filter = ['date_added']
+    ordering = ['-date_added']
+
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['slug', 'price', 'stock', 'date_added']
+    list_filter = ['date_added']
+    ordering = ['-date_added']
+
+
+class CartAdmin(admin.ModelAdmin):
+    pass
+
+
+class OrderAdmin(admin.ModelAdmin):
+    pass

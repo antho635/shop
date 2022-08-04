@@ -27,18 +27,18 @@
                     </tbody>
                 </table>
             <!-- bouton supprimer panier -->
-            <p>
-                <a class="btn btn-danger" href="{% url 'delete-cart' %}">Supprimer panier</a>
-            </p>
-            <!-- bouton payer -->
-            <p>
-                <a class="btn btn-success" href="#">Payer</a>
-            </p>
-            {% else %}
-                <p>No products in cart.</p>
+
+                <p>
+                    <a class="btn btn-danger" href="{% url 'delete-cart' %}">Supprimer panier</a>
+                </p>
             {% endif %}
+
+                <p>
+                    <a class="btn btn-success" href="#">Payer</a>
+                </p>
 
         </div>
     </div>
 </div>
+
 {% endblock %}

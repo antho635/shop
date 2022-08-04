@@ -1,9 +1,8 @@
 from django.contrib import admin
-from myShop.models import Product, Category, Order, Cart
+from myShop.models import Product, Category, Order, Cart, ProductAdmin, CategoryAdmin, OrderAdmin, CartAdmin
 
-admin.site.register(Product)
-admin.site.register(Category)
-admin.site.register(Order)
-admin.site.register(Cart)
-
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Order, OrderAdmin)
+admin.site.register(Cart, CartAdmin)
 
