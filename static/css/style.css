@@ -114,6 +114,25 @@ footer {
       margin: auto;
       width: 100%;
     }
+    .content-header {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    width: 80%;
+    justify-content: space-between;
+    margin: auto;
+    }
+
+    .product-box {
+      width: 40%;
+      margin: auto;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      width: 100%;
+    }
 
     .content-header {
     flex-direction: row !important;
