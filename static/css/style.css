@@ -114,19 +114,19 @@ footer {
       margin: auto;
       width: 100%;
     }
+
     .content-header {
     flex-direction: row !important;
     flex-wrap: wrap;
     width: 80%;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: auto;
     }
 
     .product-box {
-      width: 40%;
+      width: 35%;
       margin: auto;
     }
-
 
 }
 
