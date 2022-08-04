@@ -108,6 +108,20 @@ footer {
 
 @media screen and (max-width: 900px)
 {
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      width: 100%;
+    }
+    .content-header {
+    flex-direction: row !important;
+    }
+
+}
+
+@media screen and (max-width: 600px)
+{
     .content-header
     {
         display: flex;
