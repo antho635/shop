@@ -1,6 +1,9 @@
 /*
 * CONTENT
 */
+body {
+    color: #fff;
+}
 .content-all {
   display: flex;
   flex-direction: column;
