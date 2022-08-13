@@ -1,6 +1,6 @@
-/*
-* CONTENT
-*/
+@import 'style2.css';
+
+
 .content-all {
   display: flex;
   flex-direction: column;
@@ -100,4 +100,12 @@ footer {
  align-items: center;
  width: 90%;
  margin: auto;
+}
+
+.table {
+ width:100%;
+ max-width:100%;
+ margin-bottom:1rem;
+ background-color:transparent;
+ color: #fff;
 }

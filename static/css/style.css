@@ -4,6 +4,15 @@
 body {
     color: #fff;
 }
+
+.table {
+ width:100%;
+ max-width:100%;
+ margin-bottom:1rem;
+ background-color:transparent;
+ color: #fff;
+}
+
 .content-all {
   display: flex;
   flex-direction: column;
