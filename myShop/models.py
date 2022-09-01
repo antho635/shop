@@ -1,8 +1,6 @@
 from django.contrib import admin
 from django.db import models
 from django.urls import reverse
-from django.utils.html import format_html
-
 from djangoProject.settings import AUTH_USER_MODEL
 
 '''
@@ -97,7 +95,7 @@ class Cart(models.Model):
     orders = models.ManyToManyField(Order, blank=True)
 
     def __str__(self):
-        return f"{self.user.username} + 's cart + ' ' + self.quantity"
+        return f"{self.user.name} + 's cart + ' ' + self.quantity"
 
     class Meta:
         ordering = ['-user']
@@ -121,3 +119,49 @@ class CartAdmin(admin.ModelAdmin):
 
 class OrderAdmin(admin.ModelAdmin):
     pass
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=120, blank=True, null=True)
+    email = models.EmailField(null=True, blank=True)
+    message = models.TextField(max_length=2500, blank=True, null=True)
+    date_send = models.DateTimeField(auto_now=True, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['-date_send']
+
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'date_send']
+    list_filter = ['date_send']
+    ordering = ['-date_send']
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
+    username = models.CharField(max_length=120, blank=True, null=True)
+    phone = models.CharField(max_length=120, blank=True, null=True)
+    address = models.CharField(max_length=120, blank=True, null=True)
+    city = models.CharField(max_length=120, blank=True, null=True)
+    state = models.CharField(max_length=120, blank=True, null=True)
+    zipcode = models.CharField(max_length=120, blank=True, null=True)
+    image_profile = models.ImageField(upload_to='profile_image', blank=True, null=True)
+    date_added = models.DateTimeField(auto_now=True, blank=True, null=True)
+
+    def __str__(self):
+        return self.username
+
+    class Meta:
+        ordering = ['-date_added']
+
+    def is_valid(self):
+        pass
+
+
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ['user', 'username', 'phone', 'address', 'city', 'state', 'zipcode', 'date_added']
+    list_filter = ['date_added']
+    ordering = ['-date_added']

@@ -1,7 +1,9 @@
+from myShop.models import UserProfile
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
-from myShop.models import Product, Cart, Order
+from myShop.models import Product, Cart, Order, Contact
 
 
 def index(request):
@@ -43,10 +45,18 @@ def delete_cart(request):
     return redirect(reverse("index"))
 
 
+def contact(request):
+    name = request.POST.get('name')
+    email = request.POST.get('email')
+    message = request.POST.get('message')
+    date_send = request.POST.get('date_send')
+    email = Contact.objects.create(name=name, email=email, message=message, date_send=date_send)
+    email.save()
+
+    return render(request, 'myshop/contact.html')
 
 
-
-
-
+def profile(request):
+    return render(request, 'accounts/profile/myprofile.html')
 
 

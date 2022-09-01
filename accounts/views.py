@@ -25,9 +25,7 @@ def login_view(request):
         # connect l'utilisateur
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-
-        if user:
+        if user := authenticate(request, username=username, password=password):
             login(request, user)
             return redirect('index')
 
