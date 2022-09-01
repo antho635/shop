@@ -6,36 +6,23 @@
 
         <!-- page profile -->
         <h1>Mon profil</h1>
-        <div style="border: solid 1px bisque;padding: 30px;">
-            <p style="display: flex; width: 100%; justify-content: space-between;">
-                <strong>Nom :</strong> {{ user.last_name }}
-                <span>
-                    <a class="btn btn-warning" href="#">Modifier</a>
-                </span>
+        <div>
+            <p style="display: flex; width: 100%; justify-content: center;">
+                <strong style="margin: auto 10px;">Nom :</strong> {{ user.last_name }}
             </p>
-            <p style="display: flex; width: 100%; justify-content: space-between;">
-                <strong>Prénom :</strong> {{ user.first_name }}
-                <span>
-                    <a class="btn btn-warning" href="#">Modifier</a>
-                </span>
+            <p style="display: flex; width: 100%; justify-content: center;">
+                <strong style="margin: auto 10px;">Prénom :</strong> {{ user.first_name }}
             </p>
-            <p style="display: flex; width: 100%; justify-content: space-between;">
-                <strong>Email :</strong> {{ user.email }}
-                <span>
-                    <a class="btn btn-warning" href="#">Modifier</a>
-                </span>
+            <p style="display: flex; width: 100%; justify-content: center;">
+                <strong style="margin: auto 10px;">Email :</strong> {{ user.email }}
             </p>
-            <p style="display: flex; width: 100%; justify-content: space-between;">
-                <strong>Date d'inscription :</strong> {{ user.date_joined }}
-                <span>
-                    <a class="btn btn-warning" href="#">Modifier</a>
-                </span>
+            <p style="display: flex; width: 100%; justify-content: center;">
+                <strong style="margin: auto 10px;">Date d'inscription :</strong> {{ user.date_joined }}
             </p>
         </div>
         <button type="button" class="btn btn-primary">
-            <a href="#">Ajouter des informations à mon profile</a>
+            <a href="#">Modifier mon profile</a>
         </button>
-
         <table class="table table-striped" style="margin-top: 50px;">
             <thead>
                 <tr>
