@@ -1,7 +1,5 @@
 from django.contrib.auth import login, get_user_model, logout, authenticate
 from django.shortcuts import render, redirect
-
-# Create your views here.
 from accounts.models import Shopper
 
 User = get_user_model()
@@ -35,4 +33,3 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
-

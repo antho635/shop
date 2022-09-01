@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
     <div class="product-box" style="width: 50%;">
@@ -7,6 +7,9 @@
         <!-- page profile -->
         <h1>Mon profil</h1>
         <div>
+            <p>
+                {{ user.image_profile }}
+            </p>
             <p style="display: flex; width: 100%; justify-content: center;">
                 <strong style="margin: auto 10px;">Nom :</strong> {{ user.last_name }}
             </p>
@@ -30,6 +33,7 @@
                     <th>Prenom</th>
                     <th>Email</th>
                     <th>Date d'inscription</th>
+                    <th>Img</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +42,7 @@
                     <td style="color: #fff">{{ user.first_name }}</td>
                     <td style="color: #fff">{{ user.email }}</td>
                     <td style="color: #fff">{{ user.date_joined }}</td>
+                    <td style="color: #fff">{{ user.image_profile }}</td>
                 </tr>
             </tbody>
         </table>
