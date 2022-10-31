@@ -57,6 +57,8 @@ def contact(request):
 
 
 def profile(request):
-    return render(request, 'accounts/profile/myprofile.html')
+    user = request.user
+    profile = UserProfile.objects.get(user=user)
+    return render(request, 'accounts/profile/myprofile.html', {'profile': profile})
 
 

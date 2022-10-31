@@ -6,27 +6,6 @@
 
         <!-- page profile -->
         <h1>Mon profil</h1>
-        <div>
-            <p>
-                {{ user.image_profile }}
-            </p>
-            <p style="display: flex; width: 100%; justify-content: center;">
-                <strong style="margin: auto 10px;">Nom :</strong> {{ user.last_name }}
-            </p>
-            <p style="display: flex; width: 100%; justify-content: center;">
-                <strong style="margin: auto 10px;">Prénom :</strong> {{ user.first_name }}
-            </p>
-            <p style="display: flex; width: 100%; justify-content: center;">
-                <strong style="margin: auto 10px;">Email :</strong> {{ user.email }}
-            </p>
-            <p style="display: flex; width: 100%; justify-content: center;">
-                <strong style="margin: auto 10px;">Date d'inscription :</strong> {{ user.date_joined }}
-            </p>
-        </div>
-        <button type="button" class="btn btn-primary">
-            <a href="#">Modifier mon profile</a>
-        </button>
-
 
         <table class="table table-striped" style="margin-top: 50px;">
             <thead>
@@ -47,6 +26,9 @@
             </tbody>
         </table>
 
+        <button type="button" class="btn btn-primary">
+            <a href="#">Modifier mon profile</a>
+        </button>
     </div>
 
 

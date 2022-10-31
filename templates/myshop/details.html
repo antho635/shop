@@ -1,30 +1,54 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<style>
+
+.box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.add-to-cart {
+    text-align: center !important;
+}
+.box-left {
+  line-height: 3;
+  font-size: 1.2em;
+}
+
+</style>
 <div class="box-details">
 
     <h2 class="text-center">{{ product.name }}</h2>
 
-    <div>
-        {% load static %}
-        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-        <p>{{ product.name }}</p>
-        <p>{{ product.description }}</p>
-        <p>Prix :
-            <strong>{{ product.price }} €</strong>
-        </p>
-        <p>Quantité en stock :
-            <strong>{{ product.stock }}</strong>
-        </p>
+
+    <div class="box">
+        <div class="box-right">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+        <div class="box-left">
+            <p>{{ product.description }}</p>
+            <p>Prix :
+                <strong>{{ product.price }} €</strong>
+            </p>
+            <p>Quantité en stock :
+                <strong>{{ product.stock }}</strong>
+            </p>
+        </div>
     </div>
 
     <!-- bouton + lien add-to-cart -->
     {% if user.is_authenticated %}
-            <p>
+
+            <p class="add-to-cart">
                 <a class="btn btn-success" href="{% url 'add-to-cart' product.slug %}">Ajouter panier</a>
             </p>
-    {% else %}
-        <p class="msg-login-for-add-cart">Veuillez vous connecter pour ajouter cette article dans votre panier</p>
+            {% else %}
+            <p class="msg-login-for-add-cart">Veuillez vous connecter pour ajouter cette article dans votre panier</p>
+
     {% endif %}
 
 </div>

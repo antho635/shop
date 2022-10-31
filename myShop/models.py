@@ -156,6 +156,8 @@ class UserProfile(models.Model):
 
     class Meta:
         ordering = ['-date_added']
+        verbose_name_plural = "UserProfiles"
+        verbose_name = "UserProfile"
 
     def is_valid(self):
         pass
