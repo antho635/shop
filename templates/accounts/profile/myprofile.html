@@ -26,6 +26,8 @@
         <button type="button" class="btn btn-primary">
             <a href="#">Modifier mon profile</a>
         </button>
+
+
         <table class="table table-striped" style="margin-top: 50px;">
             <thead>
                 <tr>
@@ -33,7 +35,6 @@
                     <th>Prenom</th>
                     <th>Email</th>
                     <th>Date d'inscription</th>
-                    <th>Img</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +43,6 @@
                     <td style="color: #fff">{{ user.first_name }}</td>
                     <td style="color: #fff">{{ user.email }}</td>
                     <td style="color: #fff">{{ user.date_joined }}</td>
-                    <td style="color: #fff">{{ user.image_profile }}</td>
                 </tr>
             </tbody>
         </table>
