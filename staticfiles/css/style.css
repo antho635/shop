@@ -1,17 +1,5 @@
-/*
-* CONTENT
-*/
-body {
-    color: #fff;
-}
+@import 'style2.css';
 
-.table {
- width:100%;
- max-width:100%;
- margin-bottom:1rem;
- background-color:transparent;
- color: #fff;
-}
 
 .content-all {
   display: flex;
@@ -114,103 +102,10 @@ footer {
  margin: auto;
 }
 
-.logo > a:nth-child(1) > img:nth-child(1) {
- width: 25%;
+.table {
+ width:100%;
+ max-width:100%;
+ margin-bottom:1rem;
+ background-color:transparent;
+ color: #fff;
 }
-
-@media screen and (max-width: 900px)
-{
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin: auto;
-      width: 100%;
-    }
-    .content-header {
-    flex-direction: row !important;
-    flex-wrap: nowrap;
-    width: 80%;
-    justify-content: space-between;
-    margin: auto;
-    }
-
-    .product-box {
-      width: 40%;
-      margin: auto;
-    }
-
-    .logo {
-      display: flex;
-      justify-content: center;
-      margin: auto;
-      width: 100%;
-    }
-
-    .content-header {
-    flex-direction: row !important;
-    flex-wrap: wrap;
-    width: 80%;
-    justify-content: space-around;
-    margin: auto;
-    }
-
-    .product-box {
-      width: 35%;
-      margin: auto;
-    }
-
-}
-
-@media screen and (max-width: 600px)
-{
-    .content-header
-    {
-        display: flex;
-        align-items: center;
-        margin: auto;
-        flex-direction: column !important;
-    }
-
-    .content-body {
-        display: flex;
-        justify-content: center;
-        margin: 40px auto;
-        flex-direction: column;
-    }
-
-    .product-box {
-      width: 80%;
-    }
-
-    div.product-box > div {
-      display: flex;
-      justify-content: center;
-      margin: auto;
-      flex-direction: column;
-    }
-
-    div.product-box > img {
-      display: flex;
-      justify-content: center;
-      margin: auto;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-around;
-      margin: auto;
-      width: 100%;
-    }
-
-    a.nav-link {
-       margin: auto;
-    }
-
-    div.product-box > img {
-    width: 70%;
-    }
-    .product-box {
-    width: 100%;
-    }
-}
-
