@@ -15,12 +15,36 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 </head>
-<body class="bg-dark">
+<body>
+<style>
+    a {
+        color: #f8f8f8 !important;
+    }
+    img {
+        width: 25%;
+    }
+
+    /* Élément | http://127.0.0.1:8000/cart/ */
+
+    footer.bg-dark {
+      display: flex;
+    }
+
+    /* Élément | http://127.0.0.1:8000/cart/ */
+
+    .content-footer {
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
+      width: 100%;
+    }
+
+</style>
 <!-- ========= Content ========= -->
 <div class="content-all">
 
 <!-- ========= Header ========= -->
-<header>
+<header class="bg-dark text text-light">
     <div class="content-header">
         <div class="logo">
             <a href="{% url 'index' %}">
@@ -71,7 +95,7 @@
 <!-- End Main -->
 
 <!-- ========= Footer ========= -->
-    <footer>
+    <footer class="bg-dark text-light">
         <div class="content-footer">
             <div class="plan-site">
                 <p>Plan du site</p>

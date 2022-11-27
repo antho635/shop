@@ -124,7 +124,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     "static/"
 ]
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = 'staticfiles'
+
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
@@ -132,8 +133,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = 'media'
 
 AUTH_USER_MODEL = 'accounts.Shopper'
 
