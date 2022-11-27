@@ -3,7 +3,12 @@
 {% block content %}
 {% for product in products %}
 
-    <div class="product-box">
+    <div class="product-box" style="display: flex !important;
+              flex-direction: column !important;
+              width: 33% !important;
+              justify-content: center !important;
+              margin: auto !important;
+              flex-wrap: wrap !important;">
 
         <img src="{{ product.image.url }}" alt="{{ product.name }}">
         <div class="caption">
